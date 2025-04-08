@@ -259,7 +259,7 @@ function loadMenu() {
         menuList.innerHTML = menu
             .map((m, index) => `
                 <div class="menu-item">
-                    ${m.code} - ${m.name} - $${m.price.toFixed(2)}
+                    ${m.code} - ${m.name} - Rs.${m.price.toFixed(2)}
                     <button onclick="editMenuItem(${index})" class="btn btn-small btn-primary">Edit</button>
                     <button onclick="deleteMenuItem(${index})" class="btn btn-small btn-danger">Delete</button>
                 </div>`)
@@ -418,7 +418,7 @@ function setupInputs() {
                 .map((item, index) => `
                     <div class="suggestion-item ${index === highlightedIndex ? 'highlighted' : ''}" 
                          onclick="selectItem('${item.code}')">
-                        ${item.code} - ${item.name} - $${item.price.toFixed(2)}
+                        ${item.code} - ${item.name} - Rs.${item.price.toFixed(2)}
                     </div>`)
                 .join("");
             suggestions.style.display = filteredItems.length ? "block" : "none";
@@ -475,7 +475,7 @@ function setupInputs() {
         if (item && currentTable) {
             const tableInfo = currentTableInfo.innerHTML.split('<p class="selected-item">')[0];
             currentTableInfo.innerHTML = tableInfo + `
-                <p class="selected-item">Selected Item: ${item.name} (${item.code}) - $${item.price.toFixed(2)}</p>
+                <p class="selected-item">Selected Item: ${item.name} (${item.code}) - Rs.${item.price.toFixed(2)}</p>
             `;
             itemInput.value = "";
             suggestions.style.display = "none";
