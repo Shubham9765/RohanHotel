@@ -598,7 +598,7 @@ function saveOrder() {
 
 function generateBillNumber() {
     const timestamp = Date.now();
-    const random = Math.floor(Math.random() * 10);
+    const random = Math.floor(Math.random() * 0.8);
     return `BILL-${timestamp}-${random}`;
 }
 
@@ -616,7 +616,7 @@ function printReceipt() {
     const total = currentOrder.reduce((sum, item) => sum + item.price * item.qty, 0);
     const billNumber = generateBillNumber();
     const timestamp = new Date().toISOString();
-    const restaurantName = "Sample Restaurant";
+    const restaurantName = "Hotel Bhalukaka";
 
     const modal = document.createElement("div");
     modal.innerHTML = `
@@ -778,7 +778,7 @@ function printReceipt() {
 
         const receipt = `
             ${restaurantName}
-            Restaurant Billing Receipt
+            Hotel BhaluKaka Receipt
             Bill Number: ${billNumber}
             Table: ${currentTable}
             Date: ${new Date().toLocaleString()}
