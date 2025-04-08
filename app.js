@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-            if (username === "admin" && password === "password123") {
+            if (username === "r" && password === "r") {
                 localStorage.setItem("loggedInUser", username);
                 localStorage.setItem("loginTime", Date.now());
                 window.location.href = "dashboard.html";
