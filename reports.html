@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Restaurant</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+                    <li><a href="tables.html" class="nav-item">Tables</a></li>
+                    <li><a href="menu.html" class="nav-item">Menu</a></li>
+                    <li><a href="reports.html" class="nav-item active">Reports</a></li>
+                    <li><button id="logoutBtn" class="nav-item btn-logout">Logout</button></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Logged in as: <strong id="user"></strong></span>
+                <span>Time remaining: <strong id="timer"></strong></span>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Reports</h1>
+            </header>
+            <div class="dashboard-layout">
+                <div class="left-panel">
+                    <section class="card">
+                        <h3>Filter Reports</h3>
+                        <div class="filter-section">
+                            <select id="filterType">
+                                <option value="">All Orders</option>
+                                <option value="day">By Day</option>
+                                <option value="month">By Month</option>
+                                <option value="range">By Date Range</option>
+                                <option value="daily">Daily Summary</option>
+                                <option value="item-wise">Item-Wise Details</option>
+                                <option value="creditors">Creditors</option>
+                            </select>
+                            <div id="filterInputs" class="filter-inputs"></div>
+                            <button id="applyFilter" class="btn btn-primary">Apply Filter</button>
+                        </div>
+                        <div class="search-section" style="margin-top: 20px;">
+                            <input type="text" id="searchBill" placeholder="Search by Bill Number">
+                            <button id="searchBillBtn" class="btn btn-primary">Search</button>
+                        </div>
+                        <div class="export-section" style="margin-top: 20px;">
+                            <button id="exportExcel" class="btn btn-success">Export Report to Excel</button>
+                        </div>
+                    </section>
+                    <section class="card">
+                        <h3>Report Details</h3>
+                        <div id="reportList"></div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

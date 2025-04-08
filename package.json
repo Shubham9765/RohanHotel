@@ -1,0 +1,14 @@
+{
+    "name": "pos-app",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "electron": "^23.0.0"
+    },
+    "devDependencies": {
+        "electron-builder": "^26.0.12"
+    }
+}
